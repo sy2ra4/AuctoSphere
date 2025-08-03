@@ -1,0 +1,336 @@
+/* --- Modern Dark Theme for Auction System --- */
+
+/* --- 1. Root Variables for Colors and Fonts --- */
+.root {
+    /* Color Palette */
+    -primary-bg: #1e293b; /* Slate 800 */
+    -secondary-bg: #334155; /* Slate 700 */
+    -surface-bg: #475569; /* Slate 600 */
+    -primary-accent: #3b82f6; /* Blue 500 */
+    -primary-accent-hover: #60a5fa; /* Blue 400 */
+    -danger-color: #ef4444; /* Red 500 */
+    -danger-color-hover: #f87171; /* Red 400 */
+    -success-color: #22c55e; /* Green 500 */
+
+    /* Text Colors */
+    -text-primary: #f1f5f9; /* Slate 100 */
+    -text-secondary: #94a3b8; /* Slate 400 */
+    -text-on-accent: #ffffff;
+
+    /* Border Colors */
+    -border-color: #475569;
+    -focus-ring-color: -primary-accent;
+
+    /* Font */
+    -fx-font-family: "Inter", "Segoe UI", "system-ui", "Helvetica Neue", "Arial", sans-serif;
+    -fx-font-size: 14px;
+}
+
+
+/* --- 2. Base & Typography Styles --- */
+.root {
+    -fx-background-color: -primary-bg;
+}
+
+.label, .text, .text-field, .combo-box, .date-picker, .table-view, .list-view, .button {
+    -fx-text-fill: -text-primary;
+}
+
+.label {
+    -fx-font-weight: 500;
+}
+
+.title-text {
+    -fx-font-size: 1.8em;
+    -fx-font-weight: 700;
+    -fx-fill: -text-primary;
+}
+
+.subtitle-text {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: 400;
+    -fx-fill: -text-secondary;
+}
+
+.error-label {
+    -fx-text-fill: -danger-color;
+    -fx-font-weight: 600;
+}
+
+
+/* --- 3. Interactive Component Styles --- */
+
+/* Buttons */
+.button {
+    -fx-background-color: -secondary-bg;
+    -fx-text-fill: -text-on-accent;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18 8 18;
+    -fx-background-radius: 8px;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.1, 0, 1);
+    -fx-transition: all 0.2s ease-in-out;
+}
+.button:hover {
+    -fx-background-color: -surface-bg;
+    -fx-border-color: -primary-accent-hover;
+}
+
+.button-primary {
+    -fx-background-color: -primary-accent;
+    -fx-border-color: -primary-accent;
+}
+.button-primary:hover {
+    -fx-background-color: -primary-accent-hover;
+    -fx-border-color: -primary-accent-hover;
+}
+
+.button-danger {
+    -fx-background-color: -danger-color;
+    -fx-border-color: -danger-color;
+}
+.button-danger:hover {
+    -fx-background-color: -danger-color-hover;
+    -fx-border-color: -danger-color-hover;
+}
+
+
+/* TextFields, PasswordFields, ComboBoxes, etc. */
+.text-field, .password-field, .text-area, .combo-box .list-cell, .date-picker .text-field {
+    -fx-background-color: -secondary-bg;
+    -fx-text-fill: -text-primary;
+    -fx-prompt-text-fill: -text-secondary;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px;
+}
+
+.text-input .content {
+    -fx-background-color: -secondary-bg;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: -focus-ring-color;
+    -fx-border-width: 2px;
+}
+.combo-box .arrow-button .arrow {
+    -fx-background-color: -text-primary;
+}
+
+.date-picker .text-field {
+    -fx-text-fill: -text-primary; /* Ensure text inside the picker field is visible */
+}
+.date-picker-popup {
+    -fx-background-color: -secondary-bg;
+    -fx-border-color: -primary-accent;
+    -fx-border-width: 1px;
+}
+.date-picker-popup .month-year-pane {
+    -fx-background-color: -secondary-bg;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: -text-primary;
+    -fx-font-weight: bold;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: -text-primary;
+}
+.date-picker-popup .week-number-cell, .date-picker-popup .day-name-cell {
+    -fx-text-fill: -text-secondary;
+    -fx-font-weight: bold;
+}
+.date-picker-popup .day-cell {
+    -fx-background-color: -secondary-bg;
+    -fx-text-fill: -text-primary;
+    -fx-background-radius: 4px;
+}
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: -surface-bg;
+}
+.date-picker-popup .day-cell.today {
+    -fx-background-color: -surface-bg;
+    -fx-border-color: -primary-accent;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: -primary-accent;
+    -fx-text-fill: -text-on-accent;
+}
+
+
+/* Hyperlink */
+.hyperlink {
+    -fx-text-fill: -primary-accent;
+    -fx-border-color: transparent;
+}
+.hyperlink:hover {
+    -fx-text-fill: -primary-accent-hover;
+    -fx-underline: true;
+}
+
+
+
+
+/* --- 4. Container & Layout Styles --- */
+
+/* TabPane */
+.tab-pane {
+    -fx-background-color: -primary-bg;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: -primary-bg;
+}
+.tab-pane .tab {
+    -fx-background-color: -secondary-bg;
+    -fx-background-radius: 8 8 0 0;
+    -fx-background-insets: 0 1 0 1;
+    -fx-padding: 8 15 8 15;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: -surface-bg;
+    -fx-border-color: -primary-accent;
+    -fx-border-width: 0 0 2px 0;
+}
+.tab-pane .tab .tab-label {
+    -fx-text-fill: -text-primary;
+    -fx-font-weight: bold;
+}
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: -text-on-accent;
+}
+.tab-pane .tab:disabled {
+    -fx-opacity: 0.5;
+}
+
+/* ListView & TableView */
+.list-view, .table-view {
+    -fx-background-color: -secondary-bg;
+    -fx-border-color: -border-color;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.table-row-cell, .list-cell {
+    -fx-background-color: -secondary-bg;
+    -fx-padding: 0px; /* Padding will be handled by the inner cell */
+    -fx-border-color: transparent; /* No border on the row itself */
+}
+
+.table-row-cell .table-cell {
+    -fx-padding: 10px;
+    -fx-text-fill: -text-primary; /* Light text */
+    -fx-border-color: transparent transparent -border-color transparent;
+    -fx-border-width: 1px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: null;
+}
+
+.list-cell {
+    -fx-padding: 10px;
+    -fx-text-fill: -text-primary;
+    -fx-border-color: transparent transparent -border-color transparent;
+    -fx-border-width: 1px;
+}
+
+
+
+.table-row-cell:hover, .list-cell:hover {
+    -fx-background-color: -surface-bg;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -secondary-bg;
+    -fx-background-radius: 8 8 0 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent -border-color transparent;
+    -fx-border-width: 2px;
+}
+.table-view .column-header .label {
+    -fx-text-fill: -text-primary;
+    -fx-alignment: CENTER_LEFT;
+}
+
+
+.table-view .filler {
+    -fx-background-color: -secondary-bg;
+}
+
+/* ScrollBar */
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: -secondary-bg;
+    -fx-background-radius: 5;
+}
+.scroll-bar .thumb {
+    -fx-background-color: -surface-bg;
+    -fx-background-radius: 5;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: -primary-accent;
+}
+
+
+/* --- 5. Custom Component Classes --- */
+
+/* Main Dashboard Header */
+.header-bar {
+    -fx-padding: 10 20 10 20;
+    -fx-background-color: -secondary-bg;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 5);
+}
+
+/* Login/Register Card */
+.card {
+    -fx-background-color: rgba(20, 30, 48, 0.85); /* Semi-transparent dark bg */
+    -fx-background-radius: 15px;
+    -fx-padding: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 20, 0, 0, 0);
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 15px;
+}
+
+/* Auction Item Card */
+.auction-card {
+    -fx-background-color: -secondary-bg;
+    -fx-padding: 15px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 0, 2);
+    -fx-border-width: 1px;
+    -fx-border-color: transparent;
+    -fx-transition: all 0.3s ease-in-out;
+}
+.auction-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 15, 0.2, 0, 4);
+    -fx-border-color: -primary-accent;
+    -fx-transform: translateY(-5px);
+}
+.auction-card .item-name {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+    -fx-fill: -text-primary;
+}
+.auction-card .countdown-timer {
+    -fx-font-size: 1.1em;
+    -fx-fill: -success-color;
+    -fx-font-weight: bold;
+}
+
+/* Auction Details Pane */
+.details-pane {
+    -fx-background-color: -secondary-bg;
+    -fx-padding: 20px;
+    -fx-border-color: -border-color;
+    -fx-border-width: 2px 0 0 0;
+}

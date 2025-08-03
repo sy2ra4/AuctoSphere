@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.university.auctionsystem.client.controllers.MessagesViewController"
+      styleClass="root" stylesheets="@/css/styles.css">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Text text="My Messages" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <Button text="Refresh" onAction="#handleRefreshMessages"/>
+    </HBox>
+
+    <ListView fx:id="messagesListView" VBox.vgrow="ALWAYS"/>
+
+    <VBox fx:id="messageDetailContainer" spacing="5" managed="false" visible="false" VBox.vgrow="NEVER"
+          style="-fx-border-color: lightgray; -fx-padding: 10;">
+        <Label text="Message Details:" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="messageDetailArea" editable="false" wrapText="true" prefHeight="120"/>
+        <Button fx:id="replyButton" text="Reply" onAction="#handleReplyAction" disable="true"/>
+    </VBox>
+</VBox>

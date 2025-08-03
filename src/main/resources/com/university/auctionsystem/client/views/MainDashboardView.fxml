@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.university.auctionsystem.client.controllers.MainDashboardController"
+            stylesheets="@/css/styles.css" styleClass="root">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header-bar">
+            <Label fx:id="welcomeLabel" style="-fx-font-size: 16px;"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Logout" onAction="#handleLogout" styleClass="button-danger"/>
+        </HBox>
+    </top>
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Browse Auctions">
+                <content>
+                    <!---->
+                    <fx:include fx:id="auctionViewTab" source="AuctionView.fxml"/>
+                </content>
+            </Tab>
+            <Tab fx:id="messagesTab" text="My Messages"> <!---->
+                <content>
+                    <fx:include fx:id="messagesViewTab" source="MessagesView.fxml"/>
+                </content>
+            </Tab>
+            <!---->
+            <Tab fx:id="sellerTab" text="My Listings &amp; Create Auction">
+                <content>
+                    <!---->
+                    <fx:include fx:id="sellerDashboardTab" source="SellerDashboardView.fxml"/>
+                </content>
+            </Tab>
+            <!---->
+            <Tab fx:id="buyerTab" text="My Activity">
+                <content>
+                    <!---->
+                    <fx:include fx:id="buyerDashboardTab" source="BuyerDashboardView.fxml"/>
+                </content>
+            </Tab>
+            <Tab fx:id="profileTab" text="My Profile"> <!---->
+                <content>
+                    <fx:include fx:id="userProfileTab" source="UserProfileView.fxml"/>
+                </content>
+            </Tab>
+            <!---->
+            <Tab fx:id="adminTab" text="Admin Panel">
+                <content>
+                    <!---->
+                    <fx:include fx:id="adminDashboardTab" source="AdminDashboardView.fxml"/>
+                </content>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

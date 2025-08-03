@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="10" alignment="TOP_LEFT" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.university.auctionsystem.client.controllers.ListItemController"
+      styleClass="root" stylesheets="@/css/styles.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <Text text="List New Item for Auction" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Label fx:id="statusLabel" styleClass="error-label"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Item Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="itemNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="300"/>
+
+        <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0" VBox.vgrow="ALWAYS"/>
+        <TextArea fx:id="descriptionArea" GridPane.rowIndex="1" GridPane.columnIndex="1" prefRowCount="4"/>
+
+        <Label text="Category:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="categoryField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Tags (comma-sep):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="tagsField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Image Path/URL:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="imagePathField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="e.g., /images/my_item.png or http://..."/>
+
+    </GridPane>
+    <Button text="List Item" onAction="#handleListItemButtonAction" styleClass="button" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+</VBox>

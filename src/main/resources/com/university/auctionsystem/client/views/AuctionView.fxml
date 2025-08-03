@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.university.auctionsystem.client.controllers.AuctionViewController"
+      styleClass="root" stylesheets="@/css/styles.css">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Text text="Active Auctions" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Refresh" onAction="#handleRefreshAuctions"/>
+    </HBox>
+    <ScrollPane VBox.vgrow="ALWAYS" fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TilePane fx:id="auctionsTilePane" hgap="15" vgap="15">
+        </TilePane>
+    </ScrollPane>
+
+    <VBox fx:id="auctionDetailsPane" spacing="10" styleClass="details-pane" visible="false" managed="false">
+        <Text fx:id="detailItemName" styleClass="title-text" style="-fx-font-size: 1.4em;"/>
+        <Label fx:id="detailItemDescription" wrapText="true" style="-fx-text-fill: -text-secondary;"/>
+        <Label fx:id="detailCurrentBid" style="-fx-font-weight: bold; -fx-font-size: 1.2em;"/>
+        <Label fx:id="detailTimeRemaining" styleClass="countdown-timer"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="bidAmountField" promptText="Your Bid Amount" HBox.hgrow="ALWAYS"/>
+
+            <Button fx:id="placeBidButton" text="Place Bid" onAction="#handlePlaceBid" styleClass="button-primary"/>
+        </HBox>
+        <Button fx:id="contactSellerButton" text="Contact Seller" managed="false" visible="false"/>
+        <Label fx:id="bidStatusLabel" styleClass="error-label"/>
+        <Label text="Bid History:" style="-fx-font-weight: bold;"/>
+        <ListView fx:id="bidHistoryListView" prefHeight="100"/>
+    </VBox>
+</VBox>
